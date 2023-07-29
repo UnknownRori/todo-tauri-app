@@ -1,3 +1,5 @@
+import { fileURLToPath, URL } from 'url';
+
 import { defineConfig } from "vite";
 import tailwindcss from 'tailwindcss';
 import vue from "@vitejs/plugin-vue";
@@ -18,4 +20,9 @@ export default defineConfig(async () => ({
   // 3. to make use of `TAURI_DEBUG` and other env variables
   // https://tauri.studio/v1/api/config#buildconfig.beforedevcommand
   envPrefix: ["VITE_", "TAURI_"],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
 }));
