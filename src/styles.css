@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Averia Sans Libre';
+    src: url('@/assets/fonts/AveriaSansLibre-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Averia Sans Libre';
+    src: url('@/assets/fonts/AveriaSansLibre-Bold.ttf');
+    font-weight: bold;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
