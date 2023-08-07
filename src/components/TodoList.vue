@@ -34,7 +34,7 @@ function addTodo() {
     </form>
 
     <ul class='relative flex flex-col gap-4 min-w-full items-center justify-center mx-auto p-2 mb-20'>
-        <TransitionGroup name='list' tag='li' class='flex flex-col gap-4'>
+        <TransitionGroup name='list' tag='li' class='flex flex-col relative gap-4'>
             <TodoItem v-for='todo in todos' :todo='todo' :key='todo.id' />
         </TransitionGroup>
     </ul>

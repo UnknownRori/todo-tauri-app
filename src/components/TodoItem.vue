@@ -8,7 +8,7 @@ defineProps<{
     todo: TodoType,
 }>();
 
-const toggleComplete = inject('update:todo:isCompleted') as UpdateTodoIsCompleteProvider;
+const toggleComplete = inject('update:todo:is_completed') as UpdateTodoIsCompleteProvider;
 const destroyTodoProvider = inject('destroy:todo') as DestroyTodoProvider;
 </script>
 
@@ -16,9 +16,9 @@ const destroyTodoProvider = inject('destroy:todo') as DestroyTodoProvider;
     <li class='flex flex-row justify-between gap-2 w-80 cursor-pointer
          bg-slate-700 rounded-md p-2 hover:bg-slate-500 duration-300'>
         <button @click='() => toggleComplete($props.todo.id)'
-            :class='`w-8 h-6 p-[0.1rem] self-center ${$props.todo.isCompleted ? "bg-green-700 hover:bg-green-500" : "bg-red-700 hover:bg-red-500"} rounded - md shadow - md`'>
+            :class='`w-8 h-6 p-[0.1rem] self-center ${$props.todo.is_completed ? "bg-green-700 hover:bg-green-500" : "bg-red-700 hover:bg-red-500"} rounded - md shadow - md`'>
             <span>
-                <svg v-if='$props.todo.isCompleted' class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"
+                <svg v-if='$props.todo.is_completed' class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                 </svg>
@@ -30,7 +30,7 @@ const destroyTodoProvider = inject('destroy:todo') as DestroyTodoProvider;
             </span>
         </button>
 
-        <p :class='`w-full h-full break-word ${$props.todo.isCompleted ? "line-through" : ""}`'>
+        <p :class='`w-full h-full break-word ${$props.todo.is_completed ? "line-through" : ""}`'>
             {{ $props.todo.body }}
         </p>
 
